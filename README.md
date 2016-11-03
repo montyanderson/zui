@@ -1,0 +1,2 @@
+# zui
+Zcash web wallet.
