@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	a(href="/t_address")
+			h1 New t-address
+
+	a(href="/z_address")
+			h1 New z-address
+
+	each tAddress in tAddresses
+		h1=tAddress.address
+		h2=tAddress.balance
+
+	each zAddress in zAddresses
+		h1=zAddress.address
+		h2=zAddress.balance
