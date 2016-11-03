@@ -1,16 +1,27 @@
 extends layout
 
+mixin address(a)
+	span.row=a.address
+	br
+	strong.row=a.balance + " ZEC"
+
 block content
-	a(href="/t_address")
-			h1 New t-address
 
-	a(href="/z_address")
-			h1 New z-address
+	.container
+		.row
+			a(href="/t_address")
+					h1 New t-address
 
-	each tAddress in tAddresses
-		h1=tAddress.address
-		h2=tAddress.balance
+			ul.collection
+				each a in tAddresses
+					li.collection-item
+						+address(a)
 
-	each zAddress in zAddresses
-		h1=zAddress.address
-		h2=zAddress.balance
+		.row
+			a(href="/z_address")
+					h1 New z-address
+
+			ul.collection
+				each a in zAddresses
+					li.collection-item
+						+address(a)
